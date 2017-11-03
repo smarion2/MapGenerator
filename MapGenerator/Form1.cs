@@ -16,5 +16,12 @@ namespace MapGenerator
         {
             InitializeComponent();
         }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            Cave cave = new Cave(20, 20, 5, 45, 3, 3);
+            cave.GenerateMap();
+        }
     }
 }
