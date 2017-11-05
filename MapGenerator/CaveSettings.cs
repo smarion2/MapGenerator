@@ -74,7 +74,7 @@ namespace MapGenerator
 
             NumericUpDown AmountOfStepsUpDown = new NumericUpDown()
             {
-                Location = new System.Drawing.Point(75, 95),
+                Location = new System.Drawing.Point(75, 90),
                 Name = "amountOfStepsUpDown0",
                 Size = new System.Drawing.Size(61, 20),
                 Value = 2

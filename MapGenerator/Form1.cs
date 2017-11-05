@@ -13,6 +13,8 @@ namespace MapGenerator
 {
     public partial class MapGenerator : Form
     {
+        Graphics formGraphics;
+
         public MapGenerator()
         {
             InitializeComponent();
@@ -20,7 +22,14 @@ namespace MapGenerator
 
         protected override void OnLoad(EventArgs e)
         {
-            base.OnLoad(e); 
+            base.OnLoad(e);
+            formGraphics = CreateGraphics();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            formGraphics.Dispose();
         }
 
         public void DrawMap()
@@ -40,34 +49,46 @@ namespace MapGenerator
 
         private void generateButton_Click(object sender, EventArgs e)
         {
+            //formGraphics.Clear(Color.Black);
+            //formGraphics.Clear(Color.Blue);
+
+
             var amountOfSteps = (Controls.Find("amountOfStepsUpDown0", true).FirstOrDefault() as NumericUpDown).Value;
             var birthChance = (Controls.Find("birthChanceUpDown", true).FirstOrDefault() as NumericUpDown).Value;
             var birthLimit = (Controls.Find("birthLimitUpDown", true).FirstOrDefault() as NumericUpDown).Value;
             var deathLimit = (Controls.Find("deathLimitUpDown", true).FirstOrDefault() as NumericUpDown).Value;
-
+            var squareSize = (int)squareSizeNumericUpDown.Value;
             Cave cave = new Cave((int)widthNumericUpDown.Value, (int)heightNumericUpDown.Value, (int)birthChance, (int)birthLimit, (int)deathLimit, (int)amountOfSteps);
             var squares = cave.GenerateMap();
 
-            Graphics formGraphics;
-            formGraphics = CreateGraphics();
-            var blackBrush = new SolidBrush(Color.Black);
-            var blueBrush = new SolidBrush(Color.Blue);
-            for (int x = 0; x < squares.GetLength(0); x++)
+            using (Form form = new Form())
             {
-                for (int y = 0; y < squares.GetLength(1); y++)
+                form.Text = "Cave";
+                form.Width = (int)widthNumericUpDown.Value * squareSize + 30;
+                form.Height = (int)heightNumericUpDown.Value * squareSize + 30;
+                form.Paint += (sender1, e1) =>
                 {
-                    if (squares[x, y])
+                    for (int x = 0; x < squares.GetLength(0); x++)
                     {
-                        formGraphics.FillRectangle(blueBrush, new Rectangle(x * 5, y * 5, 5, 5));
-                    }
-                    else
-                    {
-                        formGraphics.FillRectangle(blackBrush, new Rectangle(x * 5, y * 5, 5, 5));
-                    }
-                }
+                        for (int y = 0; y < squares.GetLength(1); y++)
+                        {
+                            if (squares[x, y])
+                            {
+                                e1.Graphics.FillRectangle(new SolidBrush(Color.Blue),  new Rectangle(x * squareSize, y * squareSize, squareSize, squareSize));
+                            }
+                            else
+                            {
+                                e1.Graphics.FillRectangle(new SolidBrush(Color.Black), new Rectangle(x * squareSize, y * squareSize, squareSize, squareSize));
+                            }
+                        }
 
+                    }
+                };
+                form.ShowDialog();
             }
-            formGraphics.Dispose();
+
+            //var blackBrush = new SolidBrush(Color.Black);
+            //var blueBrush = new SolidBrush(Color.Blue);
         }
     }
 }

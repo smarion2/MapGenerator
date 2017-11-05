@@ -75,9 +75,19 @@
             // widthNumericUpDown
             // 
             this.widthNumericUpDown.Location = new System.Drawing.Point(255, 11);
+            this.widthNumericUpDown.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.widthNumericUpDown.Name = "widthNumericUpDown";
             this.widthNumericUpDown.Size = new System.Drawing.Size(59, 20);
             this.widthNumericUpDown.TabIndex = 3;
+            this.widthNumericUpDown.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             // 
             // label3
             // 
@@ -91,9 +101,19 @@
             // heightNumericUpDown
             // 
             this.heightNumericUpDown.Location = new System.Drawing.Point(365, 10);
+            this.heightNumericUpDown.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.heightNumericUpDown.Name = "heightNumericUpDown";
             this.heightNumericUpDown.Size = new System.Drawing.Size(57, 20);
             this.heightNumericUpDown.TabIndex = 5;
+            this.heightNumericUpDown.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             // 
             // label4
             // 
@@ -110,6 +130,11 @@
             this.squareSizeNumericUpDown.Name = "squareSizeNumericUpDown";
             this.squareSizeNumericUpDown.Size = new System.Drawing.Size(48, 20);
             this.squareSizeNumericUpDown.TabIndex = 7;
+            this.squareSizeNumericUpDown.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // generateButton
             // 
@@ -125,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 536);
+            this.ClientSize = new System.Drawing.Size(667, 290);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.squareSizeNumericUpDown);
             this.Controls.Add(this.label4);
