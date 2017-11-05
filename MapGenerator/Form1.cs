@@ -28,9 +28,24 @@ namespace MapGenerator
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void mapTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cave cave = new Cave(50, 50, 5, 40, 4, 3);
+            switch((String)mapTypeComboBox.SelectedItem)
+            {
+                case "Cave":
+                    CaveSettings.GenerateUISettings(this);
+                    break;
+            }
+        }
+
+        private void generateButton_Click(object sender, EventArgs e)
+        {
+            var amountOfSteps = (Controls.Find("amountOfStepsUpDown0", true).FirstOrDefault() as NumericUpDown).Value;
+            var birthChance = (Controls.Find("birthChanceUpDown", true).FirstOrDefault() as NumericUpDown).Value;
+            var birthLimit = (Controls.Find("birthLimitUpDown", true).FirstOrDefault() as NumericUpDown).Value;
+            var deathLimit = (Controls.Find("deathLimitUpDown", true).FirstOrDefault() as NumericUpDown).Value;
+
+            Cave cave = new Cave((int)widthNumericUpDown.Value, (int)heightNumericUpDown.Value, (int)birthChance, (int)birthLimit, (int)deathLimit, (int)amountOfSteps);
             var squares = cave.GenerateMap();
 
             Graphics formGraphics;
@@ -53,21 +68,6 @@ namespace MapGenerator
 
             }
             formGraphics.Dispose();
-        }
-
-        private void mapTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch((String)mapTypeComboBox.SelectedItem)
-            {
-                case "Cave":
-                    CaveSettings.GenerateUISettings(this);
-                    break;
-            }
-        }
-
-        private void generateButton_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

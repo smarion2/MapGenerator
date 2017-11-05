@@ -20,11 +20,10 @@ namespace MapGenerator
         private bool[,] Squares;
         Random rand;
 
-        public Cave(int width, int height, int squareSize, int birthChance, int birthLimit, int deathLimit, int amountOfSteps = 2)
+        public Cave(int width, int height, int birthChance, int birthLimit, int deathLimit, int amountOfSteps = 2)
         {
             Width = width;
-            Height = height;
-            squareSize = SquareSize;
+            Height = height;            
             Squares = new bool[width, height];
             BirthChance = birthChance;
             BirthLimit = birthLimit;

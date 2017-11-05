@@ -53,28 +53,31 @@ namespace MapGenerator
                 Location = new System.Drawing.Point(75, 15),
                 Name = "birthChanceUpDown",
                 Size = new System.Drawing.Size(61, 15),
+                Value = 40
             };
 
             NumericUpDown BirthLimitUpDown = new NumericUpDown()
             {
                 Location = new System.Drawing.Point(75, 40),
                 Name = "birthLimitUpDown",
-                Size = new System.Drawing.Size(61, 20)
+                Size = new System.Drawing.Size(61, 20),
+                Value = 4
             };
 
             NumericUpDown DeathLimitUpDown = new NumericUpDown()
             {
                 Location = new System.Drawing.Point(75, 65),
                 Name = "deathLimitUpDown",
-                Size = new System.Drawing.Size(61, 20)
+                Size = new System.Drawing.Size(61, 20),
+                Value = 3
             };
 
             NumericUpDown AmountOfStepsUpDown = new NumericUpDown()
             {
                 Location = new System.Drawing.Point(75, 95),
                 Name = "amountOfStepsUpDown0",
-                Size = new System.Drawing.Size(61, 20)
-
+                Size = new System.Drawing.Size(61, 20),
+                Value = 2
             };
 
             GroupBox CaveSettingsBox = new GroupBox();
