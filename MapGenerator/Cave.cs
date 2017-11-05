@@ -35,9 +35,26 @@ namespace MapGenerator
         {
             InitializeMap();
             for (int i = 0; i < 3; i++)
-            {
+            {                
+                for (int k = 0; k < Squares.GetLength(0); k++)
+                {
+                    for (int j = 0; j < Squares.GetLength(1); j++)
+                    {
+                        if (Squares[k,j])
+                        {
+                            System.Diagnostics.Debug.Write(" ");
+                        }
+                        else
+                        {
+                            System.Diagnostics.Debug.Write("*");
+                        }
+                    }
+                    System.Diagnostics.Debug.WriteLine("");
+                }
+                DoSimulationStep();
 
             }
+            System.Diagnostics.Debugger.Break();
         }
 
         private void InitializeMap()
@@ -84,6 +101,7 @@ namespace MapGenerator
                     }
                 }
             }
+            Squares = newMap;
         }
 
         private int AliveNeighbours(int x, int y)
@@ -102,7 +120,7 @@ namespace MapGenerator
                     {
                         continue;
                     }
-                    else if (neighborX < 0 || neighborY < 0 || neighborX > xLength  || neighborY > yLength)
+                    else if (neighborX < 0 || neighborY < 0 || neighborX > xLength - 1 || neighborY > yLength - 1)
                     {
                         count++;
                     }

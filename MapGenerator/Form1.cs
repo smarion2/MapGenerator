@@ -20,7 +20,7 @@ namespace MapGenerator
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            Cave cave = new Cave(20, 20, 5, 45, 3, 3);
+            Cave cave = new Cave(100, 100, 5, 45, 2, 4);
             cave.GenerateMap();
         }
     }
