@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace MapGenerator
 {
-    public partial class Form1 : Form
+    public partial class MapGenerator : Form
     {
-        public Form1()
+        public MapGenerator()
         {
             InitializeComponent();
         }
@@ -53,6 +53,21 @@ namespace MapGenerator
 
             }
             formGraphics.Dispose();
+        }
+
+        private void mapTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch((String)mapTypeComboBox.SelectedItem)
+            {
+                case "Cave":
+                    CaveSettings.GenerateUISettings(this);
+                    break;
+            }
+        }
+
+        private void generateButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

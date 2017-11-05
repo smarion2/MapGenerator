@@ -15,11 +15,12 @@ namespace MapGenerator
         private int BirthChance;
         private int BirthLimit;
         private int DeathLimit;
+        private int AmountOfSteps;
 
         private bool[,] Squares;
         Random rand;
 
-        public Cave(int width, int height, int squareSize, int birthChance, int birthLimit, int deathLimit)
+        public Cave(int width, int height, int squareSize, int birthChance, int birthLimit, int deathLimit, int amountOfSteps = 2)
         {
             Width = width;
             Height = height;
@@ -28,13 +29,14 @@ namespace MapGenerator
             BirthChance = birthChance;
             BirthLimit = birthLimit;
             DeathLimit = deathLimit;
+            AmountOfSteps = amountOfSteps;
             rand = new Random();
         }
 
         public Boolean[,] GenerateMap()
         {
             InitializeMap();
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < AmountOfSteps; i++)
             { 
                 DoSimulationStep();
             }
