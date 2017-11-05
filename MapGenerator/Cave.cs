@@ -31,30 +31,14 @@ namespace MapGenerator
             rand = new Random();
         }
 
-        public void GenerateMap()
+        public Boolean[,] GenerateMap()
         {
             InitializeMap();
-            for (int i = 0; i < 3; i++)
-            {                
-                for (int k = 0; k < Squares.GetLength(0); k++)
-                {
-                    for (int j = 0; j < Squares.GetLength(1); j++)
-                    {
-                        if (Squares[k,j])
-                        {
-                            System.Diagnostics.Debug.Write(" ");
-                        }
-                        else
-                        {
-                            System.Diagnostics.Debug.Write("*");
-                        }
-                    }
-                    System.Diagnostics.Debug.WriteLine("");
-                }
+            for (int i = 0; i < 2; i++)
+            { 
                 DoSimulationStep();
-
             }
-            System.Diagnostics.Debugger.Break();
+            return Squares;            
         }
 
         private void InitializeMap()
@@ -63,7 +47,7 @@ namespace MapGenerator
             {
                 for (int j = 0; j < Squares.GetLength(1); j++)
                 {
-                    var roll = rand.Next(0, 100) > BirthChance;
+                    var roll = rand.Next(0, 100) < BirthChance;
                     Squares[i, j] = roll;
                 }    
             }
@@ -120,9 +104,9 @@ namespace MapGenerator
                     {
                         continue;
                     }
-                    else if (neighborX < 0 || neighborY < 0 || neighborX > xLength - 1 || neighborY > yLength - 1)
+                    else if (neighborX < 0 || neighborY < 0 || neighborX >= xLength || neighborY >= yLength)
                     {
-                        count++;
+                        continue;
                     }
                     else if (Squares[neighborX, neighborY])
                     {

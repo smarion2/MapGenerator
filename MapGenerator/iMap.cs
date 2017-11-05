@@ -12,7 +12,7 @@ namespace MapGenerator
         int Height { get; }
         int SquareSize { get; }
 
-        void GenerateMap();
+        Boolean[,] GenerateMap();
         
     }
 }
