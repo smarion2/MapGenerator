@@ -66,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(320, 13);
+            this.label2.Location = new System.Drawing.Point(26, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             // widthNumericUpDown
             // 
-            this.widthNumericUpDown.Location = new System.Drawing.Point(255, 11);
+            this.widthNumericUpDown.Location = new System.Drawing.Point(70, 41);
             this.widthNumericUpDown.Maximum = new decimal(new int[] {
             500,
             0,
@@ -92,7 +92,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(214, 13);
+            this.label3.Location = new System.Drawing.Point(29, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 4;
@@ -100,7 +100,7 @@
             // 
             // heightNumericUpDown
             // 
-            this.heightNumericUpDown.Location = new System.Drawing.Point(365, 10);
+            this.heightNumericUpDown.Location = new System.Drawing.Point(70, 72);
             this.heightNumericUpDown.Maximum = new decimal(new int[] {
             500,
             0,
@@ -118,7 +118,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(443, 12);
+            this.label4.Location = new System.Drawing.Point(0, 116);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 6;
@@ -126,9 +126,9 @@
             // 
             // squareSizeNumericUpDown
             // 
-            this.squareSizeNumericUpDown.Location = new System.Drawing.Point(514, 10);
+            this.squareSizeNumericUpDown.Location = new System.Drawing.Point(70, 109);
             this.squareSizeNumericUpDown.Name = "squareSizeNumericUpDown";
-            this.squareSizeNumericUpDown.Size = new System.Drawing.Size(48, 20);
+            this.squareSizeNumericUpDown.Size = new System.Drawing.Size(59, 20);
             this.squareSizeNumericUpDown.TabIndex = 7;
             this.squareSizeNumericUpDown.Value = new decimal(new int[] {
             5,
@@ -138,7 +138,7 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(581, 8);
+            this.generateButton.Location = new System.Drawing.Point(54, 146);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(75, 23);
             this.generateButton.TabIndex = 8;
@@ -150,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 290);
+            this.ClientSize = new System.Drawing.Size(314, 211);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.squareSizeNumericUpDown);
             this.Controls.Add(this.label4);

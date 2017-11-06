@@ -74,11 +74,11 @@ namespace MapGenerator
                         {
                             if (squares[x, y])
                             {
-                                e1.Graphics.FillRectangle(new SolidBrush(Color.Blue),  new Rectangle(x * squareSize, y * squareSize, squareSize, squareSize));
+                                e1.Graphics.FillRectangle(new SolidBrush(Color.Black),  new Rectangle(x * squareSize, y * squareSize, squareSize, squareSize));
                             }
                             else
                             {
-                                e1.Graphics.FillRectangle(new SolidBrush(Color.Black), new Rectangle(x * squareSize, y * squareSize, squareSize, squareSize));
+                                e1.Graphics.FillRectangle(new SolidBrush(Color.WhiteSmoke), new Rectangle(x * squareSize, y * squareSize, squareSize, squareSize));
                             }
                         }
 

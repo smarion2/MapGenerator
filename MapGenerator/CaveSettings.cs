@@ -82,7 +82,7 @@ namespace MapGenerator
 
             GroupBox CaveSettingsBox = new GroupBox();
             CaveSettingsBox.Size = new System.Drawing.Size(150, 135);
-            CaveSettingsBox.Location = new System.Drawing.Point(10, 30);
+            CaveSettingsBox.Location = new System.Drawing.Point(150, 30);
             CaveSettingsBox.Controls.Add(BirthChanceLabel);
             CaveSettingsBox.Controls.Add(BirthLimitLabel);
             CaveSettingsBox.Controls.Add(DeathLimitLabel);
