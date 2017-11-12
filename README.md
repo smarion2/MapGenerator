@@ -11,6 +11,6 @@ Death Limit is the amount of neighbors each square that are "dead" if over the l
 
 Steps the amount of passes of each square on the map to check the rules.
 
-![alt text](https://imgur.com/CxDrfuS)
-![alt text](https://imgur.com/3VmVuq1)
-![alt text](https://imgur.com/AfkFMJj)
+![alt text](https://imgur.com/CxDrfuS.png)
+![alt text](https://imgur.com/3VmVuq1.png)
+![alt text](https://imgur.com/AfkFMJj.png)
